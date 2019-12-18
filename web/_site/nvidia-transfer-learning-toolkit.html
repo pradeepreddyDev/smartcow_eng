@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Nvidia Transfer Learning Toolkit - SmartCow
+    
+  </title>
+
+  <meta name="description" content="In today’s world, most of the highly optimized Deep Neural Networks architecture is already available to use and what makes it more impressive is the ability...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="smartcow.ai/nvidia-transfer-learning-toolkit.html">
+  <link rel="alternate" type="application/rss+xml" title="SmartCow" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">SmartCow</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Blogs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Page Header -->
+
+<header class="masthead" style="background-image: url('/assets/images/nvidia.jpeg')">
+  
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Nvidia Transfer Learning Toolkit</h1>
+            
+            <h2 class="subheading">A Comprehensive Guide.</h2>
+            
+            <span class="meta">Posted on December 17, 2019 
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        <p>In today’s world, most of the highly optimized Deep Neural Networks architecture is already available to use and what makes it more impressive is the ability to train only the last few layers of a pre-trained model to achieve superhuman accuracy in very less time.</p>
+
+<img class="img-fluid" src="/assets/images/nv2.jpeg" alt="learning toolkit">
+<span class="caption text-muted">Source Nvidia.</span>
+
+<p>In this article, we are going to train a model on publically available KITTI Dataset, using NVIDIA Transfer Learning Toolkit (TLT) and deploy it to Jetson Nano.</p>
+
+<p>The first step is to set up your NVIDIA  <a href="https://ngc.nvidia.com/">NGC</a> account and pull the TLT container.</p>
+
+<blockquote class="caption text-muted">docker pull nvcr.io/nvidia/tlt-streamanalytics:v1.0_py2.</blockquote>
+
+<p>After that, you can start your TLT container using the below command.</p>
+
+<blockquote class="caption text-muted">docker run --runtime=nvidia -it \ <br>
+    -v /home/<username>/workspace:/workspace \ <br>
+    -p 8888:8888 tlt-streamanalytics:v1.0_py2</blockquote>
+
+
+<h2 class="section-heading">Dataset Preparation</h2>
+
+<p>The dataset can be downloaded from here https://www.kaggle.com/twaldo/kitti-object-detection/data</p>
+<p>Keep it inside workspace/dataset directory for easy access, after extracting the zip file you’ll end up with training & testing directories both containing images and their corresponding labels. For the sake of simplicity of this tutorial, we are going to use training images only.</p>
+
+<blockquote class="blockquote">We can have a quick look at the training dataset size:</blockquote>
+<blockquote class="caption text-muted">!echo Total Training Images:
+    !ls /workspace/dataset/KITTI_original/training/image_2 -l | wc -l
+    !echo
+    !echo Total Training Labels:
+    !ls /workspace/dataset/KITTI_original/training/label_2 -l | wc -l</blockquote>
+
+
+<h2 class="section-heading">About Sentinel</h2>
+<p>Sentinel is an Nvidia NX / Nano powered hardware platform with the potential to run several states of the art, Deep Learning Models and provide support for Intelligent Video Analytics at the edge.</p>
+<img class="img-fluid" src="/assets/images/nv3.jpeg" alt="Sentinel">
+<span class="caption text-muted">Sentinel</span>
+
+        <hr>
+
+        <div class="clearfix">
+
+          
+          <a class="btn btn-primary float-left" href="/roots-in-a-piece-of-classical.html" data-toggle="tooltip" data-placement="top" title="Roots in a piece of classical">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:pradeep@smartcow.ai">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/smartcow_ai">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/SmartCowAI">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/smartcow">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; SmartCow 2019</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXXXXX-X');
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+---
+layout: post
+title: "Nvidia Transfer Learning Toolkit"
+subtitle: "A Comprehensive Guide."
+date: 2019-12-17 10:45:13 -0400
+background: '/assets/images/nvidia.jpeg'
+permalink: "nvidia-transfer-learning-toolkit.html"
+---
+
+<p>In today’s world, most of the highly optimized Deep Neural Networks architecture is already available to use and what makes it more impressive is the ability to train only the last few layers of a pre-trained model to achieve superhuman accuracy in very less time.</p>
+
+<img class="img-fluid" src="/assets/images/nv2.jpeg" alt="learning toolkit">
+<span class="caption text-muted">Source Nvidia.</span>
+
+<p>In this article, we are going to train a model on publically available KITTI Dataset, using NVIDIA Transfer Learning Toolkit (TLT) and deploy it to Jetson Nano.</p>
+
+<p>The first step is to set up your NVIDIA  <a href="https://ngc.nvidia.com/">NGC</a> account and pull the TLT container.</p>
+
+<blockquote class="caption text-muted">docker pull nvcr.io/nvidia/tlt-streamanalytics:v1.0_py2.</blockquote>
+
+<p>After that, you can start your TLT container using the below command.</p>
+
+<blockquote class="caption text-muted">docker run --runtime=nvidia -it \ <br>
+    -v /home/<username>/workspace:/workspace \ <br>
+    -p 8888:8888 tlt-streamanalytics:v1.0_py2</blockquote>
+
+
+<h2 class="section-heading">Dataset Preparation</h2>
+
+<p>The dataset can be downloaded from here https://www.kaggle.com/twaldo/kitti-object-detection/data</p>
+<p>Keep it inside workspace/dataset directory for easy access, after extracting the zip file you’ll end up with training & testing directories both containing images and their corresponding labels. For the sake of simplicity of this tutorial, we are going to use training images only.</p>
+
+<blockquote class="blockquote">We can have a quick look at the training dataset size:</blockquote>
+<blockquote class="caption text-muted">!echo Total Training Images:
+    !ls /workspace/dataset/KITTI_original/training/image_2 -l | wc -l
+    !echo
+    !echo Total Training Labels:
+    !ls /workspace/dataset/KITTI_original/training/label_2 -l | wc -l</blockquote>
+
+
+<h2 class="section-heading">About Sentinel</h2>
+<p>Sentinel is an Nvidia NX / Nano powered hardware platform with the potential to run several states of the art, Deep Learning Models and provide support for Intelligent Video Analytics at the edge.</p>
+<img class="img-fluid" src="/assets/images/nv3.jpeg" alt="Sentinel">
+<span class="caption text-muted">Sentinel</span>

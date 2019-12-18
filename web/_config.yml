@@ -1,0 +1,25 @@
+title:              SmartCow 
+email:              pradeep@smartcow.ai
+description:        An AI engineering Company
+author:             SmartCow
+baseurl:            ""
+url:                "smartcow.ai"
+
+# Social Profiles
+twitter_username:   smartcow_ai
+github_username:    smartcow
+facebook_username:  SmartCowAI
+linkedin_username:
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+
+# Build settings
+future: true
+markdown:           kramdown
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
